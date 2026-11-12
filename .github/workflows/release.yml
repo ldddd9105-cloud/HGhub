@@ -173,7 +173,8 @@ jobs:
   # ================= macOS：Universal（Apple Silicon + Intel）dmg =================
   macos:
     name: macOS (universal dmg)
-    runs-on: macos-latest
+    # 2026-11-12: macos-latest(arm64) 宿主池持续 15 分钟排队后被取消（capacity constraints），改用 Intel 池
+    runs-on: macos-15-intel
     steps:
       - uses: actions/checkout@v4
 
